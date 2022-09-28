@@ -1,5 +1,6 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { connect } from 'react-redux';
+import MultiplesItem from '../MultiplesItem/MultiplesItem';
 
 import './MultiplesTable.css'
 
@@ -22,10 +23,6 @@ const MultiplesTable = ({ count }) => {
     }
     
     let factorArray = createFactors(100);
-    
-    function multiples(num, factor) {
-        return num * factor;
-    }
 
 
   return (
@@ -36,9 +33,7 @@ const MultiplesTable = ({ count }) => {
             {
             factorArray.map(i => {
                 return (
-                <div className='multiple-wrapper'>
-                    <p>{`${count}  *  ${i}  =  ${multiples(count, i)}`}</p>
-                </div>
+                    <MultiplesItem key={i} factor={i}/>
                 )
             })
             }

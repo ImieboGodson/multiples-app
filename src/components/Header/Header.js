@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { connect } from 'react-redux';
 import { addNumber, subNumber } from '../../redux/actions/countActions';
 import './Header.css';
