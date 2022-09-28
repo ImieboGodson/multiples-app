@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
+import Header from './components/Header/Header';
+import MultiplesTable from './components/MultiplesTable/MultiplesTable';
+import { addNumber, subNumber } from './redux/actions/countActions';
 
-function App() {
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAddCount: (addValue) => dispatch(addNumber(addValue)),
+    onSubCount: (subValue) => dispatch(subNumber(subValue))
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    count: state.handleCount.count
+  }
+}
+
+function App({ onAddCount, onSubCount, count }) {
+  // const [gap, setGap] = useState(1);
+
+
+  
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <MultiplesTable />
+      </main>
     </div>
   );
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
