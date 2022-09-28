@@ -1,13 +1,10 @@
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './MultiplesItem.css';
 
-const mapStateToProps = (state) => {
-    return {
-      count: state.handleCount.count
-    }
-}
 
-const MultiplesItem = ({ count, factor }) => {
+const MultiplesItem = ({ factor }) => {
+
+  const count = useSelector(state => state.counter.value);
 
     function multiples(num, fact) {
         return num * fact;
@@ -20,4 +17,4 @@ const MultiplesItem = ({ count, factor }) => {
   )
 }
 
-export default connect(mapStateToProps, null)(MultiplesItem);
+export default MultiplesItem;

@@ -1,24 +1,19 @@
-// import { useState } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import MultiplesItem from '../MultiplesItem/MultiplesItem';
-
 import './MultiplesTable.css'
 
 
-const mapStateToProps = (state) => {
-    return {
-      count: state.handleCount.count
-    }
-}
 
-const MultiplesTable = ({ count }) => {
+const MultiplesTable = () => {
+
+  const count = useSelector(state => state.counter.value)
 
     function createFactors(arraylength) {
         let factors = []
         for(let i = 1; i<=arraylength; i++) {
           factors[i] = i
         }
-        console.log(factors)
+        // console.log(factors)
         return factors
     }
     
@@ -43,4 +38,4 @@ const MultiplesTable = ({ count }) => {
   )
 }
 
-export default connect(mapStateToProps, null)(MultiplesTable);
+export default MultiplesTable;

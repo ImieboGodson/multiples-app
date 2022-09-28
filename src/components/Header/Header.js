@@ -1,28 +1,19 @@
-import { connect } from 'react-redux';
-import { addNumber, subNumber } from '../../redux/actions/countActions';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement } from '../../redux/slices/counterSlice';
 import './Header.css';
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-      onAddCount: (addValue) => dispatch(addNumber()),
-      onSubCount: (subValue) => dispatch(subNumber())
-    }
-}
+const Header = () => {
 
-const mapStateToProps = (state) => {
-    return {
-      count: state.handleCount.count
-    }
-}
+  const count = useSelector(state => state.counter.value)
+  const dispatch = useDispatch()
 
-const Header = ({ onAddCount, onSubCount, count }) => {
   return (
     <header>
-        <button onClick={() => onAddCount()} className='add'>+</button>
+        <button onClick={() => dispatch(increment())} className='add'>+</button>
             <div className='count-wrapper'>{count}</div>
-        <button onClick={() => onSubCount()} className='sub'>-</button>
+        <button onClick={() => dispatch(decrement())} className='sub'>-</button>
     </header>
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;
