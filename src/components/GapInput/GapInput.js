@@ -12,7 +12,7 @@ const GapInput = () => {
 
   const onGapInputChange = (e) => {
     setGapAdjust(e.target.value);
-    dispatch(adjustGap(gapAdjust));
+    dispatch(adjustGap(Number(gapAdjust)));
     console.log(gapAdjust)
     console.log('From Store: ', gap);
   }

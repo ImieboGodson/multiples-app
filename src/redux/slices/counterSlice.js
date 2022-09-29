@@ -19,7 +19,8 @@ export const counterSlice = createSlice({
         },
 
         adjustGap: (state, action) => {
-            state.gap += action.payload
+            console.log('adjustGapp action: ', action.payload)
+            state.gap *= action.payload
         }
     }
 })
