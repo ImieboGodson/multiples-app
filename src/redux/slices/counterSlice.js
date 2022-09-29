@@ -5,7 +5,8 @@ export const counterSlice = createSlice({
     name: 'counter',
 
     initialState: {
-        value: 0
+        value: 0,
+        gap: 1
     },
 
     reducers: {
@@ -15,10 +16,14 @@ export const counterSlice = createSlice({
 
         decrement: (state) => {
             state.value -= 1
+        },
+
+        adjustGap: (state, action) => {
+            state.gap += action.payload
         }
     }
 })
 
-export const  { increment, decrement } = counterSlice.actions;
+export const  { increment, decrement, adjustGap } = counterSlice.actions;
 
 export const counterReducer = counterSlice.reducer;
