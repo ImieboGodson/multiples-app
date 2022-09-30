@@ -4,7 +4,7 @@ import './MultiplesItem.css';
 
 const MultiplesItem = ({ factor }) => {
 
-  const count = useSelector(state => state.counter.value);
+  const { count } = useSelector(state => state.counter);
 
     function multiples(num, fact) {
         return num * fact;

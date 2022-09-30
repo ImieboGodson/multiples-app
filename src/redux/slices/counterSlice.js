@@ -5,22 +5,22 @@ export const counterSlice = createSlice({
     name: 'counter',
 
     initialState: {
-        value: 0,
+        count: 0,
         gap: 1
     },
 
     reducers: {
         increment: (state) => {
-            state.value += 1
+            state.count += 1
         },
 
         decrement: (state) => {
-            state.value -= 1
+            state.count -= 1
         },
 
         adjustGap: (state, action) => {
             console.log('adjustGapp action: ', action.payload)
-            state.gap *= action.payload
+            state.gap = action.payload
         }
     }
 })

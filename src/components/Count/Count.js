@@ -5,7 +5,7 @@ import './Count.css'
 
 const Count = () => {
 
-  const count = useSelector(state => state.counter.value)
+  const { count } = useSelector(state => state.counter)
   const dispatch = useDispatch()
 
 

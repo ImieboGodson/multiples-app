@@ -12,16 +12,21 @@ const GapInput = () => {
 
   const onGapInputChange = (e) => {
     setGapAdjust(e.target.value);
+  }
+
+  const onFormSubmit = (e) => {
+    e.preventDefault();
     dispatch(adjustGap(Number(gapAdjust)));
-    console.log(gapAdjust)
-    console.log('From Store: ', gap);
+    // console.log(gapAdjust)
+    // console.log('From Store: ', gap);
   }
 
 
   return (
-    <form className='gap-input-container'>
-        <label htmlFor='gap'>Gap Between Multiples</label><br></br>
-        <input onChange={(e) => onGapInputChange(e)} className="gap-input" type="number" name="gap" placeholder='' value={gapAdjust}/>
+    <form className='gap-input-container' onSubmit={(e) => onFormSubmit(e)}>
+        <label htmlFor='gap'>Gap Between Multiples</label>
+        <input onChange={onGapInputChange} className="gap-input" type="number" name="gap" placeholder='' value={gapAdjust}/>
+        <button type='submit' >Apply Gap</button>
     </form>
   )
 }

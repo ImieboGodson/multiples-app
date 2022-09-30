@@ -6,7 +6,7 @@ import './MultiplesTable.css'
 
 const MultiplesTable = () => {
 
-  const count = useSelector(state => state.counter.value)
+  const { count } = useSelector(state => state.counter)
 
     function createFactors(arraylength) {
         let factors = []
