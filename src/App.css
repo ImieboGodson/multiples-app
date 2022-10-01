@@ -1,8 +1,8 @@
 :root {
   --header-height: 45vh;
-  --button-width: 50px;
-  --count-wrapper-width: 200px;
-  --counter-wrapper-x-margin: 30px;
+  --button-width: 35px;
+  --count-wrapper-width: 170px;
+  --counter-wrapper-x-margin: 20px;
   --smaller-wrapper-width: calc((var(var(--button-width) * 2) + var(var(--count-wrapper-width) + (var(var(--counter-wrapper-x-margin) * 2)))))
 }
 

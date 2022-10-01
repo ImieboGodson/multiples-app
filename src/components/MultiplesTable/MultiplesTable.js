@@ -12,11 +12,6 @@ const MultiplesTable = () => {
         let factors = []
         for(let i = gap; i<=arraylength; i+=gap) {
           factors[i] = i;
-          // if ((factors[i] - factors[i-1]) === gap) {
-          //   factors[i] = i;
-          // } else {
-          //   i++
-          // }
         }
         console.log(factors)
         return factors
