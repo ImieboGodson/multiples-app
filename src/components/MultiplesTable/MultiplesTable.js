@@ -24,15 +24,15 @@ const MultiplesTable = () => {
     <div className='smaller-wrapper'>
         <h3>Multiples of {count}</h3>
         <div className='content-wrapper'>
-        <div>
-            {
-            factorArray.map(i => {
-                return (
-                    <MultiplesItem key={i} factor={i}/>
-                )
-            })
-            }
-        </div>
+          <div>
+              {
+              factorArray.map(i => {
+                  return (
+                      <MultiplesItem key={i} factor={i}/>
+                  )
+              })
+              }
+          </div>
         </div>
     </div>
   )

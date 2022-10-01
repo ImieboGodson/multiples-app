@@ -1,14 +1,6 @@
-main {
-    min-height: calc(100vh - var(--header-height));
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
   
   .smaller-wrapper {
-    width: 360px;
+    width: 255px;
     text-align: center;
     border: 0.5px solid #cdcdcd;
     border-radius: 5px;

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { applyFilter } from '../../redux/slices/counterSlice';
+
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import './Filter.css';
 
 const Filter = () => {
@@ -41,7 +43,7 @@ const Filter = () => {
 
   return (
     <div className='filter-container'>
-      <button onClick={onFormToggle} className={`${isFilterOpen ? '' : 'border-bottom' } filter-dropdown-button`}>Filter <span></span></button>
+      <button onClick={onFormToggle} className={`${isFilterOpen ? '' : 'border-bottom' } filter-dropdown-button`}>{isFilterOpen ?  <IoIosArrowUp /> :  <span><p>Filter</p> <IoIosArrowDown /></span>}</button>
       <form className={`${isFilterOpen ? '' : 'noDisplay' } filter-form`} onSubmit={(e) => onFormSubmit(e)}>
         <div className='fitler-inputs-wrapper'>
           {/* <label htmlFor='gap'>Gap Between Multiples</label> */}

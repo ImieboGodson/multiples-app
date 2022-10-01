@@ -10,6 +10,9 @@
     margin-top: 0;
     width: var(--count-wrapper-width);
     height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 0.75rem;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -18,6 +21,16 @@
 .filter-dropdown-button.border-bottom {
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+}
+
+.filter-dropdown-button > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-dropdown-button > span > p {
+    margin-right: 5px;
 }
 
 .filter-form.noDisplay {
