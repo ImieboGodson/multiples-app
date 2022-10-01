@@ -6,7 +6,8 @@ export const counterSlice = createSlice({
 
     initialState: {
         count: 0,
-        gap: 1
+        gap: 1,
+        length: 10,
     },
 
     reducers: {
@@ -18,13 +19,14 @@ export const counterSlice = createSlice({
             state.count -= 1
         },
 
-        adjustGap: (state, action) => {
-            console.log('adjustGapp action: ', action.payload)
-            state.gap = action.payload
+        applyFilter: (state, action) => {
+            console.log('applyFilter action: ', action.payload);
+            state.gap = action.payload.gapInput
+            state.length = action.payload.lengthInput
         }
     }
 })
 
-export const  { increment, decrement, adjustGap } = counterSlice.actions;
+export const  { increment, decrement, applyFilter } = counterSlice.actions;
 
 export const counterReducer = counterSlice.reducer;

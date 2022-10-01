@@ -6,18 +6,23 @@ import './MultiplesTable.css'
 
 const MultiplesTable = () => {
 
-  const { count, gap } = useSelector(state => state.counter);
+  const { count, gap, length } = useSelector(state => state.counter);
 
     function createFactors(arraylength) {
         let factors = []
         for(let i = gap; i<=arraylength; i+=gap) {
           factors[i] = i;
+          // if ((factors[i] - factors[i-1]) === gap) {
+          //   factors[i] = i;
+          // } else {
+          //   i++
+          // }
         }
         console.log(factors)
         return factors
     }
     
-    let factorArray = createFactors(100);
+    let factorArray = createFactors(length);
 
 
   return (

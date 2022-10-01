@@ -1,6 +1,6 @@
 
 import Count from '../Count/Count';
-import GapInput from '../GapInput/GapInput';
+import Filter from '../Filter/Filter';
 import './Header.css';
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header>
         <Count />
-        <GapInput />
+        <Filter />
     </header>
   )
 }
